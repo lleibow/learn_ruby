@@ -25,20 +25,15 @@ def first_word(string)
 end
 
 def titleize(string)
-  small = ["and", "the", "over"]
-  #array = []
-  words = string.split
-  words.each do |i|
-    if small.include?(i)
-      i += 1
-    else i.capitalize
-    end
-  end
-  words.join
-end
 
-  #array<<string.split.map do |i|
-    #i.capitalize unless small.include?(i)
-  #end
-  #array.join(' ')
-#end
+  array = string.split
+
+  array.each do |word|
+    word.capitalize! unless word == "the" || word == "and" || word == "over"
+  end
+
+  array[0].capitalize!
+
+  array.join(" ")
+
+end
